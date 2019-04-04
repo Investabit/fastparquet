@@ -146,7 +146,7 @@ class ParquetFile(object):
         self.row_groups = fmd.row_groups or []
         self.key_value_metadata = {k.key: k.value
                                    for k in fmd.key_value_metadata or []}
-        self.created_by = fmd.created_by
+        self.created_by = fmd.created_by or ""
         self.group_files = {}
         for i, rg in enumerate(self.row_groups):
             for chunk in rg.columns:
